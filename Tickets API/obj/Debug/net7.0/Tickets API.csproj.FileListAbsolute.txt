@@ -1,0 +1,51 @@
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\appsettings.Development.json
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\appsettings.json
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Tickets API.exe
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Tickets API.deps.json
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Tickets API.runtimeconfig.json
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Tickets API.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Tickets API.pdb
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Microsoft.OpenApi.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\Tickets API.csproj.AssemblyReference.cache
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\Tickets API.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\Tickets API.AssemblyInfoInputs.cache
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\Tickets API.AssemblyInfo.cs
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\Tickets API.csproj.CoreCompileInputs.cache
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\Tickets API.MvcApplicationPartsAssemblyInfo.cs
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\Tickets API.MvcApplicationPartsAssemblyInfo.cache
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\staticwebassets\msbuild.Tickets API.Microsoft.AspNetCore.StaticWebAssets.props
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\staticwebassets\msbuild.build.Tickets API.props
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Tickets API.props
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Tickets API.props
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\staticwebassets.pack.json
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\staticwebassets.build.json
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\staticwebassets.development.json
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\scopedcss\bundle\Tickets API.styles.css
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\Tickets API.csproj.CopyComplete
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\Tickets API.dll
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\refint\Tickets API.dll
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\Tickets API.pdb
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\Tickets API.genruntimeconfig.cache
+D:\C# projects\Tickets API\Tickets API\obj\Debug\net7.0\ref\Tickets API.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\global.json
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\AutoMapper.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Humanizer.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Npgsql.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\System.CodeDom.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Json\saleSchema.json
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Tests\JsonTestSale.json
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Newtonsoft.Json.Schema.dll
