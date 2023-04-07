@@ -14,13 +14,13 @@ public class Ticket
     public string name { get; set; }
     public string surname { get; set; }
     public string patronymic  { get; set; }
-    public int doc_type { get; set; }
-    public int doc_number { get; set; }
+    public string doc_type { get; set; }
+    public string doc_number { get; set; }
     [DataType(DataType.Date)]
     public DateTime birthdate { get; set;}
     public string gender { get; set; }
     public string passenger_type { get; set; }
-    public int ticket_number { get; set; }
+    public string ticket_number { get; set; }
     public int ticket_type { get; set; }
     //Routes
     public string airline_code { get; set; }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Tickets_API.Data;
 using Tickets_API.DTO;
 using Tickets_API.Models;
@@ -18,7 +19,7 @@ public class TicketRepository : ITicketRepository
 
     public TicketDto GetTicket(int ticket_number)
     {
-        return _mapper.Map<TicketDto>(_context.Segments.FirstOrDefault(m => m.ticket_number == ticket_number));
+        return _mapper.Map<TicketDto>(_context.Segments.FirstOrDefault(m => int.Parse(m.ticket_number) == ticket_number));
     }
     public TicketDto PostTicket(TicketDto ticketDto)
     {

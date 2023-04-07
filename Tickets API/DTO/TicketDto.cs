@@ -18,12 +18,12 @@ public class TicketDto
     public string gender { get; set; }
     public string passenger_type { get; set; }
     public string ticket_number { get; set; }
-    public System.Int16 ticket_type { get; set; }
+    public int ticket_type { get; set; }
     //Routes
     public string airline_code { get; set; }
-    public System.Int16 flight_num { get; set; }
+    public int flight_num { get; set; }
     public string depart_place { get; set; }
-    public DateTime depart_datetime { get; set; }
+    public string depart_datetime { get; set; }
     public string arrive_place { get; set; }
     public DateTime arrive_datetime { get; set; }
     public string pnr_id { get; set; }

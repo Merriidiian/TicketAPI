@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Update;
 using Newtonsoft.Json.Linq;
 using Tickets_API;
@@ -28,12 +29,14 @@ public class TicketsApiController : ControllerBase
         if (ticket == null) return NotFound();
         return Ok(ticket);
     }
+
     [HttpPost]
     //[Filters.SaleJsonFilters]
     public ActionResult<TicketDto> PostTicket(TicketDto ticketDto)
     {
-        var ticket = _service.PostTicket(ticketDto);
-        return CreatedAtAction("GetByTicketNumber", new { ticket_number = ticket.ticket_number}, ticket);
+        var ticket = _service.PostTicket(ticketDto); 
+        return CreatedAtAction("GetByTicketNumber", new { ticket_number = ticket.ticket_number.ToString() },
+                ticket);
     }
     /*public ActionResult TestJson()
     {

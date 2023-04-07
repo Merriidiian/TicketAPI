@@ -13,7 +13,7 @@ builder.Services.AddDbContext<TicketContext>(options =>
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddScoped<ITicketRepository, TicketRepository>();
+builder.Services.AddTransient<ITicketRepository, TicketRepository>();
 
 
 var app = builder.Build();

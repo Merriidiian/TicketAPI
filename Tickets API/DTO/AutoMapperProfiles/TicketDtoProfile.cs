@@ -8,6 +8,13 @@ public class TicketDtoProfile:Profile
     
     public TicketDtoProfile()
     {
-        CreateMap<Ticket, TicketDto>().ReverseMap();
+        CreateMap<TicketDto, Ticket>().ReverseMap();
+        /*var configuration = new MapperConfiguration(cfg =>
+        {
+            cfg.CreateMap<string, int>().ConvertUsing(s => Convert.ToInt32(s));
+            cfg.CreateMap<int, string>().ConvertUsing(s => Convert.ToString(s));
+            cfg.CreateMap<TicketDto, Ticket>().ReverseMap();
+        });
+        configuration.AssertConfigurationIsValid();*/
     }
 }
