@@ -9,6 +9,7 @@ public class TicketDtoProfile:Profile
     public TicketDtoProfile()
     {
         CreateMap<TicketDto, Ticket>().ReverseMap();
+        
         /*var configuration = new MapperConfiguration(cfg =>
         {
             cfg.CreateMap<string, int>().ConvertUsing(s => Convert.ToInt32(s));

@@ -9,7 +9,8 @@ using Tickets_API.DTO;
 using Tickets_API.Repositories;
 
 namespace Tickets_API.Controllers;
-[Route("api/process/sale")]
+
+[Route("[Controller]/[Action]")]
 [ApiController]
 public class TicketsApiController : ControllerBase
 {
@@ -22,20 +23,19 @@ public class TicketsApiController : ControllerBase
         _service = service;
         _logger = logger;
     }
-
+    [HttpGet]
     public IActionResult GetByTicketNumber (int ticket_number)
     {
         var ticket = _service.GetTicket(ticket_number);
         if (ticket == null) return NotFound();
         return Ok(ticket);
     }
-
     [HttpPost]
     //[Filters.SaleJsonFilters]
     public ActionResult<TicketDto> PostTicket(TicketDto ticketDto)
     {
         var ticket = _service.PostTicket(ticketDto); 
-        return CreatedAtAction("GetByTicketNumber", new { ticket_number = ticket.ticket_number.ToString() },
+        return CreatedAtAction("GetByTicketNumber", new { ticket_number = ticket.ticket_number },
                 ticket);
     }
     /*public ActionResult TestJson()

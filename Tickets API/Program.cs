@@ -17,7 +17,6 @@ builder.Services.AddTransient<ITicketRepository, TicketRepository>();
 
 
 var app = builder.Build();
-
 app.UseHttpsRedirection();
 app.UseRouting();
 

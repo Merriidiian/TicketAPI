@@ -23,8 +23,13 @@ public class TicketRepository : ITicketRepository
     }
     public TicketDto PostTicket(TicketDto ticketDto)
     {
-        var ticket = _context.Add(_mapper.Map<Ticket>(ticketDto)).Entity;
-        _context.SaveChangesAsync();
+        /*ticketDto.arrive_datetime = ticketDto.arrive_datetime.Date.ToUniversalTime();
+        ticketDto.depart_datetime = ticketDto.depart_datetime.Date.ToUniversalTime();
+        ticketDto.operation_time = ticketDto.operation_time.Date.ToUniversalTime();*/
+        var ticket = _mapper.Map<Ticket>(ticketDto);
+        _context.Segments.Add(ticket);
+        _context.SaveChanges();
         return _mapper.Map<TicketDto>(ticket);
     }
+    
 }
