@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Tickets_API.Data;
 using Tickets_API.DTO;
 using Tickets_API.Models;
+using Route = Tickets_API.DTO.Route;
 
 namespace Tickets_API.Repositories;
 
@@ -17,19 +18,26 @@ public class TicketRepository : ITicketRepository
         _mapper = mapper;
     }
 
-    public TicketDto GetTicket(int ticket_number)
-    {
-        return _mapper.Map<TicketDto>(_context.Segments.FirstOrDefault(m => int.Parse(m.ticket_number) == ticket_number));
-    }
+    
     public TicketDto PostTicket(TicketDto ticketDto)
     {
-        /*ticketDto.arrive_datetime = ticketDto.arrive_datetime.Date.ToUniversalTime();
-        ticketDto.depart_datetime = ticketDto.depart_datetime.Date.ToUniversalTime();
-        ticketDto.operation_time = ticketDto.operation_time.Date.ToUniversalTime();*/
         var ticket = _mapper.Map<Ticket>(ticketDto);
-        _context.Segments.Add(ticket);
-        _context.SaveChanges();
-        return _mapper.Map<TicketDto>(ticket);
+        foreach (var t in ticketDto.routes)
+        {
+            ticket = _mapper.Map<Ticket>(ticketDto);
+            ticket.airline_code = t.airline_code;
+            ticket.flight_num = t.flight_num;
+            ticket.depart_place = t.depart_place;
+            ticket.depart_datetime = DateTime.Parse(t.depart_datetime).ToUniversalTime();
+            ticket.depart_datetime_timezone = (short)(DateTimeOffset.Parse(t.depart_datetime).Offset.Hours * -1);
+            ticket.arrive_place = t.arrive_place;
+            ticket.arrive_datetime = DateTime.Parse(t.arrive_datetime).ToUniversalTime();
+            ticket.arrive_datetime_timezone = (short)(DateTimeOffset.Parse(t.arrive_datetime).Offset.Hours * -1);
+            ticket.pnr_id = t.pnr_id;
+            _context.Segments.Add(ticket);
+            _context.SaveChanges();
+        }
+
+        return ticketDto;
     }
-    
 }

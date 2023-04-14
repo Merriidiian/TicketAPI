@@ -66,9 +66,13 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Newtonsoft.Json.Schema": {
               "target": "Package",
-              "version": "[3.0.14, )"
+              "version": "[3.0.15-beta2, )"
             },
             "Npgsql": {
               "target": "Package",

@@ -48,4 +48,3 @@ D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\System.CodeDom.dll
 D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Json\saleSchema.json
 D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Tests\JsonTestSale.json
 D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Newtonsoft.Json.dll
-D:\C# projects\Tickets API\Tickets API\bin\Debug\net7.0\Newtonsoft.Json.Schema.dll

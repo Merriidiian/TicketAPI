@@ -8,8 +8,9 @@ public class TicketContext : DbContext
     public TicketContext(DbContextOptions<TicketContext> options) : base(options)
     {
     }
+
     public DbSet<Ticket> Segments { get; set; }
-    
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       => optionsBuilder.UseNpgsql("Server=localhost; Port=5432;Database=Tickets;User Id=postgres;Password=root");
+        => optionsBuilder.UseNpgsql("Server=localhost; Port=5432;Database=Tickets;User Id=postgres;Password=root");
 }
