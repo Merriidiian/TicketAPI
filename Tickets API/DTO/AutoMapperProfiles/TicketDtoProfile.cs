@@ -22,6 +22,7 @@ public class TicketDtoProfile : Profile
             .ForMember(dest => dest.gender, opt => opt.MapFrom(src => src.passenger.gender))
             .ForMember(dest => dest.passenger_type, opt => opt.MapFrom(src => src.passenger.passenger_type))
             .ForMember(dest => dest.ticket_number, opt => opt.MapFrom(src => src.passenger.ticket_number))
+            //.ForMember(dest => dest.airline_code, opt => opt.MapFrom(src => src.routes))
             .ForMember(dest => dest.ticket_type, opt => opt.MapFrom(src => src.passenger.ticket_type));
     }
 }

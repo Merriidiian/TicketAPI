@@ -4,5 +4,5 @@ namespace Tickets_API.Repositories;
 
 public interface ITicketRepository
 {
-    TicketDto PostTicket(TicketDto ticketDto);
+    Task <TicketDto> PostTicket(TicketDto ticketDto);
 }

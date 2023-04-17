@@ -21,9 +21,9 @@ public class TicketsApiController : ControllerBase
     {
         _service = service;
     }
-    [ticket_numberFilter]
+    [RequestSizeLimit(2 * 1024)]
     [HttpPost]
-    public ActionResult<TicketDto> PostTicket(TicketDto ticketDto)
+    public async  Task <ActionResult<TicketDto>> PostTicket(TicketDto ticketDto)
     {
         _service.PostTicket(ticketDto);
         return Ok();

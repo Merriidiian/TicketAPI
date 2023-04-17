@@ -19,7 +19,7 @@ public class TicketRepository : ITicketRepository
     }
 
     
-    public TicketDto PostTicket(TicketDto ticketDto)
+    public async Task <TicketDto> PostTicket(TicketDto ticketDto)
     {
         var ticket = _mapper.Map<Ticket>(ticketDto);
         foreach (var t in ticketDto.routes)
@@ -34,9 +34,9 @@ public class TicketRepository : ITicketRepository
             ticket.arrive_datetime = DateTime.Parse(t.arrive_datetime).ToUniversalTime();
             ticket.arrive_datetime_timezone = (short)(DateTimeOffset.Parse(t.arrive_datetime).Offset.Hours * -1);
             ticket.pnr_id = t.pnr_id;
-            _context.Segments.Add(ticket);
-            _context.SaveChanges();
+            _context.Segments.AddAsync(ticket);
         }
+        await _context.SaveChangesAsync();
 
         return ticketDto;
     }
