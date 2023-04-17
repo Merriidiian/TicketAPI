@@ -14,7 +14,6 @@ namespace Tickets_API.Models;
 public class Ticket
 {
     public string operation_type { get; set; }
-    
     public DateTime operation_time{ get; set; }
     public Int16 operation_time_timezone { get; set; }
     public string operation_place { get; set; }

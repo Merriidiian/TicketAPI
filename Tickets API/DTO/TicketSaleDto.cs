@@ -4,7 +4,7 @@ using Tickets_API.Filters.ModelValidation;
 
 namespace Tickets_API.DTO;
 
-public class TicketDto
+public class TicketSaleDto
 {
     //Сюда тыкаем атрибут-фильтр для проверки?
     public string operation_type { get; set; }

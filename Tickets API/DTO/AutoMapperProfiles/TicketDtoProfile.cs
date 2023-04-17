@@ -7,8 +7,8 @@ public class TicketDtoProfile : Profile
 {
     public TicketDtoProfile()
     {
-        CreateMap<TicketDto, Ticket>().ReverseMap();
-        CreateMap<TicketDto, Ticket>()
+        CreateMap<TicketSaleDto, Ticket>().ReverseMap();
+        CreateMap<TicketSaleDto, Ticket>()
             .ForMember(dest => dest.operation_time, opt => opt.MapFrom(src => DateTime.Parse(src.operation_time).ToUniversalTime()))
             .ForMember(dest => dest.operation_time_timezone,
                 opt => opt.MapFrom(src => DateTimeOffset.Parse(src.operation_time).Offset.Hours * (-1)))
@@ -24,5 +24,8 @@ public class TicketDtoProfile : Profile
             .ForMember(dest => dest.ticket_number, opt => opt.MapFrom(src => src.passenger.ticket_number))
             //.ForMember(dest => dest.airline_code, opt => opt.MapFrom(src => src.routes))
             .ForMember(dest => dest.ticket_type, opt => opt.MapFrom(src => src.passenger.ticket_type));
+
+
+        CreateMap<TicketRefundDto, Ticket>().ReverseMap();
     }
 }
