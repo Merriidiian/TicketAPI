@@ -4,6 +4,7 @@ using Tickets_API.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Tickets_API.Repositories;
+using Tickets.Middleware;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +20,7 @@ builder.Services.AddTransient<ITicketRepository, TicketRepository>();
 
 
 var app = builder.Build();
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthorization();

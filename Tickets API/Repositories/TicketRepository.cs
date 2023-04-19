@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Tickets_API.Data;
 using Tickets_API.DTO;
 using Tickets_API.Models;
+using Tickets.Middleware.Exceptions;
 
 namespace Tickets_API.Repositories;
 
@@ -44,6 +45,7 @@ public class TicketRepository : ITicketRepository
     {
         var allTicket = _context.Segments.ToList();
         Ticket refundTicket = null;
+        int flag = 0;
         foreach (var t in allTicket)
         {
             if (t.ticket_number == ticketRefundDto.ticket_number && t.operation_type == "sale")
@@ -51,6 +53,14 @@ public class TicketRepository : ITicketRepository
                 refundTicket = t;
                 refundTicket.operation_type = ticketRefundDto.operation_type;
             }
+            else
+            {
+                flag++; 
+            }
+        }
+        if (flag == allTicket.Count)
+        {
+            throw new RefundTicketNumberIsNotFound("TicketNumber is not found");
         }
         _context.Segments.Update(refundTicket);
         await _context.SaveChangesAsync();
