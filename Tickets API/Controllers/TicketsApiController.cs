@@ -12,6 +12,7 @@ using Tickets_API.Repositories;
 namespace Tickets_API.Controllers;
 
 [ApiController]
+[ApiVersion("2.0")]
 public class TicketsApiController : ControllerBase
 {
     private readonly ITicketRepository _service;
@@ -20,7 +21,7 @@ public class TicketsApiController : ControllerBase
     {
         _service = service;
     }
-    [Route("api/process/sale/")]
+    [Route("api/v{version:apiVersion}/process/sale/")]
     [RequestSizeLimit(2 * 1024)]
     [HttpPost]
     public async Task <ActionResult<TicketSaleDto>> PostTicketSale(TicketSaleDto ticketSaleDto)
@@ -32,7 +33,7 @@ public class TicketsApiController : ControllerBase
     
     [RequestSizeLimit(2 * 1024)]
     [HttpPost]
-    [Route("api/process/refund/")]
+    [Route("api/v{version:apiVersion}/process/refund/")]
     public async Task<ActionResult<TicketRefundDto>> PostTicketRefund(TicketRefundDto ticketRefundDto)
     {
         await _service.PostTicketRefund(ticketRefundDto);

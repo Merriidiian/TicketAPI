@@ -13,6 +13,7 @@ builder.Services.AddDbContext<TicketContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("TicketConnection")));
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddControllers();
+builder.Services.AddApiVersioning();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddTransient<ITicketRepository, TicketRepository>();
 
