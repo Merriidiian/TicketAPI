@@ -6,7 +6,6 @@ namespace Tickets_API.DTO;
 
 public class TicketSaleDto
 {
-    //Сюда тыкаем атрибут-фильтр для проверки?
     public string operation_type { get; set; }
     public string operation_time { get; set; }
     public string operation_place { get; set; }

@@ -22,9 +22,11 @@ public class TicketRepository : ITicketRepository
     public async Task <TicketSaleDto> PostTicketSale(TicketSaleDto ticketSaleDto)
     {
         var ticketSale = _mapper.Map<Ticket>(ticketSaleDto);
+        int serial_numberIncrement = 1;
         foreach (var t in ticketSaleDto.routes)
         {
             ticketSale = _mapper.Map<Ticket>(ticketSaleDto);
+            ticketSale.serial_number = serial_numberIncrement;
             ticketSale.airline_code = t.airline_code;
             ticketSale.flight_num = t.flight_num;
             ticketSale.depart_place = t.depart_place;
@@ -34,6 +36,7 @@ public class TicketRepository : ITicketRepository
             ticketSale.arrive_datetime = DateTime.Parse(t.arrive_datetime).ToUniversalTime();
             ticketSale.arrive_datetime_timezone = (short)(DateTimeOffset.Parse(t.arrive_datetime).Offset.Hours * -1);
             ticketSale.pnr_id = t.pnr_id;
+            serial_numberIncrement++;
            await _context.Segments.AddAsync(ticketSale);
         }
         await _context.SaveChangesAsync();

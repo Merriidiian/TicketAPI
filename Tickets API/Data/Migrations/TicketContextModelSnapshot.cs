@@ -27,7 +27,7 @@ namespace TicketsAPI.Data.Migrations
                     b.Property<string>("ticket_number")
                         .HasColumnType("text");
 
-                    b.Property<int>("flight_num")
+                    b.Property<int>("serial_number")
                         .HasColumnType("integer");
 
                     b.Property<string>("airline_code")
@@ -64,6 +64,9 @@ namespace TicketsAPI.Data.Migrations
                     b.Property<string>("doc_type")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("flight_num")
+                        .HasColumnType("integer");
 
                     b.Property<string>("gender")
                         .IsRequired()
@@ -106,7 +109,10 @@ namespace TicketsAPI.Data.Migrations
                     b.Property<int>("ticket_type")
                         .HasColumnType("integer");
 
-                    b.HasKey("ticket_number", "flight_num");
+                    b.HasKey("ticket_number", "serial_number");
+
+                    b.HasIndex("ticket_number", "serial_number")
+                        .IsUnique();
 
                     b.ToTable("Segments");
                 });

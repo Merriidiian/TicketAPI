@@ -10,6 +10,12 @@ public class TicketContext : DbContext
     }
 
     public DbSet<Ticket> Segments { get; set; }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Ticket>()
+            .HasIndex(p => new { p.ticket_number, p.serial_number })
+            .IsUnique(true);
+    }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseNpgsql("Server=localhost; Port=5432;Database=Tickets;User Id=postgres;Password=root");
