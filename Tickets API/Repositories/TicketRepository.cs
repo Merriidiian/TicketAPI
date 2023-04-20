@@ -40,32 +40,22 @@ public class TicketRepository : ITicketRepository
            await _context.Segments.AddAsync(ticketSale);
         }
         await _context.SaveChangesAsync();
-
         return ticketSaleDto;
     }
 
     public async Task<TicketRefundDto> PostTicketRefund(TicketRefundDto ticketRefundDto)
     {
-        var allTicket = _context.Segments.ToList();
-        Ticket refundTicket = null;
-        int flag = 0;
-        foreach (var t in allTicket)
-        {
-            if (t.ticket_number == ticketRefundDto.ticket_number && t.operation_type == "sale")
-            {
-                refundTicket = t;
-                refundTicket.operation_type = ticketRefundDto.operation_type;
-            }
-            else
-            {
-                flag++; 
-            }
-        }
-        if (flag == allTicket.Count)
+        var allTicket = _context.Segments.Where(t =>
+            t.ticket_number == ticketRefundDto.ticket_number && t.operation_type == "sale");
+        if (!allTicket.Any())
         {
             throw new RefundTicketNumberIsNotFound("TicketNumber is not found");
         }
-        _context.Segments.Update(refundTicket);
+        foreach (var t in allTicket)
+        {
+            t.operation_type = ticketRefundDto.operation_type;
+            
+        }
         await _context.SaveChangesAsync();
         return ticketRefundDto;
     }
