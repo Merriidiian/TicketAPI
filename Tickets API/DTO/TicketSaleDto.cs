@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Tickets_API.Filters.ModelValidation;
+using Tickets_API.Validation;
 
 
 namespace Tickets_API.DTO;
 
+[JsonSale]
 public class TicketSaleDto
 {
     public string operation_type { get; set; }

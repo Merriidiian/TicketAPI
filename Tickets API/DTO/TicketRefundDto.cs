@@ -1,7 +1,8 @@
 ﻿using Tickets_API.Filters.ModelValidation;
+using Tickets_API.Validation;
 
 namespace Tickets_API.DTO;
-
+[JsonRefund]
 public class TicketRefundDto
 {
     public string operation_type { get; set; }

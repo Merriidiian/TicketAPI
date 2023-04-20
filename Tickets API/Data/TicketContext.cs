@@ -14,7 +14,7 @@ public class TicketContext : DbContext
     {
         modelBuilder.Entity<Ticket>()
             .HasIndex(p => new { p.ticket_number, p.serial_number })
-            .IsUnique(true);
+            .IsUnique();
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -1,51 +1,50 @@
 {
-  "$schema": "https://json-schema.org/draft-07/schema",
-  "$id": "http://example.com/example.json",
-  "title": "Root Schema",
-  "description": "The root schema is the schema that comprises the entire JSON document.",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "default": {},
-  "required": [
-    "operation_type",
-    "operation_time",
-    "operation_place",
-    "passenger",
-    "routes"
-  ],
-  "additionalProperties": true,
   "properties": {
     "operation_type": {
-      "title": "The operation_type Schema",
-      "description": "An explanation about the purpose of this instance.",
-      "type": "string",
-      "default": "sale",
-      "examples": [
-        "sale"
-      ]
+      "type": "string"
     },
     "operation_time": {
-      "title": "The operation_time Schema",
-      "description": "An explanation about the purpose of this instance.",
-      "type": "string",
-      "default": "",
-      "examples": [
-        "2022-01-01T03:25+03:00"
-      ]
+      "type": "string"
     },
     "operation_place": {
-      "title": "The operation_place Schema",
-      "description": "An explanation about the purpose of this instance.",
-      "type": "string",
-      "default": "",
-      "examples": [
-        "Aeroflot"
-      ]
+      "type": "string"
     },
     "passenger": {
-      "title": "The passenger Schema",
-      "description": "An explanation about the purpose of this instance.",
       "type": "object",
-      "default": {},
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "surname": {
+          "type": "string"
+        },
+        "patronymic": {
+          "type": "string"
+        },
+        "doc_type": {
+          "type": "string"
+        },
+        "doc_number": {
+          "type": "string"
+        },
+        "birthdate": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "passenger_type": {
+          "type": "string"
+        },
+        "ticket_number": {
+          "type": "string"
+        },
+        "ticket_type": {
+          "type": "integer"
+        }
+      },
       "required": [
         "name",
         "surname",
@@ -57,246 +56,54 @@
         "passenger_type",
         "ticket_number",
         "ticket_type"
-      ],
-      "additionalProperties": true,
-      "properties": {
-        "name": {
-          "title": "The name Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "Dmitrii"
-          ]
-        },
-        "surname": {
-          "title": "The surname Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "Makarov"
-          ]
-        },
-        "patronymic": {
-          "title": "The patronymic Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "Pavlovich"
-          ]
-        },
-        "doc_type": {
-          "title": "The doc_type Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "00"
-          ]
-        },
-        "doc_number": {
-          "title": "The doc_number Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "3108111434"
-          ]
-        },
-        "birthdate": {
-          "title": "The birthdate Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "2001-07-12"
-          ]
-        },
-        "gender": {
-          "title": "The gender Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "M"
-          ]
-        },
-        "passenger_type": {
-          "title": "The passenger_type Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "youth"
-          ]
-        },
-        "ticket_number": {
-          "title": "The ticket_number Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "5552139265672"
-          ]
-        },
-        "ticket_type": {
-          "title": "The ticket_type Schema",
-          "description": "An explanation about the purpose of this instance.",
-          "type": "integer",
-          "default": 0,
-          "examples": [
-            1
-          ]
-        }
-      },
-      "examples": [{
-        "name": "Dmitrii",
-        "surname": "Makarov",
-        "patronymic": "Pavlovich",
-        "doc_type": "00",
-        "doc_number": "3108111434",
-        "birthdate": "2001-07-12",
-        "gender": "M",
-        "passenger_type": "youth",
-        "ticket_number": "5552139265672",
-        "ticket_type": 1
-      }]
+      ]
     },
     "routes": {
-      "title": "The routes Schema",
-      "description": "An explanation about the purpose of this instance.",
       "type": "array",
-      "default": [],
-      "additionalItems": true,
-      "items": {
-        "title": "A Schema",
-        "description": "An explanation about the purpose of this instance.",
-        "type": "object",
-        "default": {},
-        "required": [
-          "airline_code",
-          "flight_num",
-          "depart_place",
-          "depart_datetime",
-          "arrive_place",
-          "arrive_datetime",
-          "pnr_id"
-        ],
-        "additionalProperties": true,
-        "properties": {
-          "airline_code": {
-            "title": "The airline_code Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "type": "string",
-            "default": "",
-            "examples": [
-              "SU"
-            ]
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "airline_code": {
+              "type": "string"
+            },
+            "flight_num": {
+              "type": "integer"
+            },
+            "depart_place": {
+              "type": "string"
+            },
+            "depart_datetime": {
+              "type": "string"
+            },
+            "arrive_place": {
+              "type": "string"
+            },
+            "arrive_datetime": {
+              "type": "string"
+            },
+            "pnr_id": {
+              "type": "string"
+            }
           },
-          "flight_num": {
-            "title": "The flight_num Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "type": "integer",
-            "default": 0,
-            "examples": [
-              1701
-            ]
-          },
-          "depart_place": {
-            "title": "The depart_place Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "type": "string",
-            "default": "",
-            "examples": [
-              "AAQ"
-            ]
-          },
-          "depart_datetime": {
-            "title": "The depart_datetime Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "type": "string",
-            "default": "",
-            "examples": [
-              "2022-01-02T09:20+10:00"
-            ]
-          },
-          "arrive_place": {
-            "title": "The arrive_place Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "type": "string",
-            "default": "",
-            "examples": [
-              "NSK"
-            ]
-          },
-          "arrive_datetime": {
-            "title": "The arrive_datetime Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "type": "string",
-            "default": "",
-            "examples": [
-              "2022-01-02T11:25+03:00"
-            ]
-          },
-          "pnr_id": {
-            "title": "The pnr_id Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "type": "string",
-            "default": "",
-            "examples": [
-              "THALSZ"
-            ]
-          }
-        },
-        "examples": [{
-          "airline_code": "SU",
-          "flight_num": 1701,
-          "depart_place": "AAQ",
-          "depart_datetime": "2022-01-02T09:20+10:00",
-          "arrive_place": "NSK",
-          "arrive_datetime": "2022-01-02T11:25+03:00",
-          "pnr_id": "THALSZ"
-        }]
-      },
-      "examples": [
-        [{
-          "airline_code": "SU",
-          "flight_num": 1701,
-          "depart_place": "AAQ",
-          "depart_datetime": "2022-01-02T09:20+10:00",
-          "arrive_place": "NSK",
-          "arrive_datetime": "2022-01-02T11:25+03:00",
-          "pnr_id": "THALSZ"
-        }]
+          "required": [
+            "airline_code",
+            "flight_num",
+            "depart_place",
+            "depart_datetime",
+            "arrive_place",
+            "arrive_datetime",
+            "pnr_id"
+          ]
+        }
       ]
     }
   },
-  "examples": [{
-    "operation_type": "sale",
-    "operation_time": "2022-01-01T03:25+03:00",
-    "operation_place": "Aeroflot",
-    "passenger": {
-      "name": "Dmitrii",
-      "surname": "Makarov",
-      "patronymic": "Pavlovich",
-      "doc_type": "00",
-      "doc_number": "3108111434",
-      "birthdate": "2001-07-12",
-      "gender": "M",
-      "passenger_type": "youth",
-      "ticket_number": "5552139265672",
-      "ticket_type": 1
-    },
-    "routes": [{
-      "airline_code": "SU",
-      "flight_num": 1701,
-      "depart_place": "AAQ",
-      "depart_datetime": "2022-01-02T09:20+10:00",
-      "arrive_place": "NSK",
-      "arrive_datetime": "2022-01-02T11:25+03:00",
-      "pnr_id": "THALSZ"
-    }]
-  }]
+  "required": [
+    "operation_type",
+    "operation_time",
+    "operation_place",
+    "passenger",
+    "routes"
+  ]
 }
