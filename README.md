@@ -1,5 +1,5 @@
 Test JSON's
-'''
+```javascript
 1.
 {
     "operation_type": "sale",
@@ -115,4 +115,4 @@ Test JSON's
     "operation_place": "Emirates",
 "ticket_number": "5552139265679"
 }
-'''
+```
